@@ -1,0 +1,520 @@
+/* ==========================================================================
+   1. GLOBAL SYSTEM RESETS & TYPOGRAPHY FOUNDATIONS
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #181a1b;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ==========================================================================
+   2. MAIN PORTFOLIO LAYOUT ENGINE
+   ========================================================================== */
+.portfolio-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(circle at 25% 50% 25%, #416de7 50%, #4556ae 70%,blue 70%);
+  display: block;
+transform: translateY(-4px);
+  border-color: rgba(9, 158, 169, 0.5); /* Vivid green border on hover */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 
+              0 0 25px rgba(74, 222, 128, 0.25);
+
+}
+
+.scrollable-content-stream {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 0;
+}
+
+.width-limiter {
+  width: 90%;
+  max-width: 900px;
+}
+
+.section-spacing {
+  margin-bottom: 6rem;
+}
+
+/* ==========================================================================
+   3. BACKGROUND GLOW NODES & AMBIENT OVERLAYS
+   ========================================================================== */
+.tech-grid-overlay {
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.tech-node {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(110px);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.blob-purple {
+  width: 500px;
+  height: 500px;
+  background: rgba(147, 51, 234, 0.13);
+  top: -10%;
+  left: 5%;
+  animation: floatHorizontal 25s infinite alternate ease-in-out;
+}
+
+.blob-cyan {
+  width: 550px;
+  height: 550px;
+  background: rgba(6, 182, 212, 0.11);
+  bottom: 10%;
+  right: -5%;
+  animation: floatVertical 28s infinite alternate ease-in-out;
+}
+
+.blob-amber {
+  width: 400px;
+  height: 400px;
+  background: rgba(245, 158, 11, 0.06);
+  top: 45%;
+  left: 40%;
+  animation: floatHorizontal 20s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes floatHorizontal {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(140px, 80px) scale(1.1); }
+}
+
+@keyframes floatVertical {
+  0% { transform: translate(0, 0) scale(1.1); }
+  100% { transform: translate(-100px, -150px) scale(0.9); }
+}
+
+/* ==========================================================================
+   4. CORE GLASSMORPHISM ARCHITECTURE
+   ====================================/opensource.png====================================== */
+.glass-container {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(24px) saturate(130%);
+  -webkit-backdrop-filter: blur(24px) saturate(130%);
+  border: 1px solid rgba(34, 197, 94, 0.15); /* Updated border with a hint of green */
+  border-radius: 24px;
+  /* Added a subtle ambient green box shadow base */
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 
+              0 0 40px rgba(34, 197, 94, 0.03); 
+  padding: 3rem;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+
+main.glass-container {
+  max-width: 560px;
+  width: 90%;
+  text-align: center;
+   transform: translateY(-4px);
+  border-color: rgba(69, 240, 57, 0.5); /* Vivid green border on hover */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 
+              0 0 25px rgba(74, 222, 128, 0.25);
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  letter-spacing: -0.5px;
+  background: linear-gradient(to right, #ffffff, #64748b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   5. HERO HEADER MODULE
+   ========================================================================== */
+.profile-header h1 {
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 800;
+  background: linear-gradient(to right, #ffffff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.profile-header h2 {
+  font-size: 1.00rem;
+  color: #06b6d4;
+  margin: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-text p {
+  color: #94a3b8;
+  line-height: 1.7;
+  margin: 2rem 0;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  color: #4ade80;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   6. INTERACTIVE BUTTON SYSTEM
+   ========================================================================== */
+.action-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.btn-primary { 
+  background: #ffffff; 
+  color: #0f172a; 
+}
+
+.btn-primary:hover { 
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+.btn-secondary { 
+  background: rgba(255, 255, 255, 0.05); 
+  color: #ffffff; 
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   7. PROJECTS GRID
+   ========================================================================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.project-card {
+  padding: 2rem;
+  text-align: left;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(74, 222, 128, 0.5); /* Vivid green border on hover */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 
+              0 0 25px rgba(74, 222, 128, 0.25); /* Bright green neon shadow blast */
+}
+.project-card h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.25rem;
+  color: #f1f5f9;
+}
+
+.project-card p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+}
+
+.tech-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: #cbd5e1;
+}
+
+/* ==========================================================================
+   8. NEW: LET'S CONNECT SOCIAL GRID & NEON GLOWS
+   ========================================================================== */
+.info-list-grid {
+  display: flex;
+  flex-direction: grid;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.list-item-card {
+  padding: 2rem;
+  text-align: left;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.list-item-card:hover {
+  transform: translateX(6px);
+  border-color: rgba(74, 222, 128, 0.4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(74, 222, 128, 0.15);
+}
+
+.card-icon-title-row {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.card-icon {
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.golden-glow {
+  color: #f59e0b;
+  filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.5));
+}
+
+.cyan-glow {
+  color: #06b6d4;
+  filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.5));
+}
+
+.card-text-block { width: 100%; }
+
+.card-header-split {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.list-item-card h4 { margin: 0; font-size: 1.0rem; color: #f1f5f9; }
+.list-item-card h5 { margin: 0.25rem 0 0.75rem 0; font-size: 0.95rem; color: #06b6d4; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+.list-item-card p { margin: 0; color: #94a3b8; font-size: 0.95rem; line-height: 1.6; }
+.card-date-badge { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.75rem; color: #cbd5e1; }
+
+/* Micro-Image Layout For Achievements */
+.achievement-pic-container { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  flex-shrink: 0; 
+  margin-top: 0.2rem; 
+}
+
+.achievement-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid rgba(245, 158, 11, 0.4);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.list-item-card:hover .achievement-pic {
+  transform: scale(1.08);
+  border-color: rgba(245, 158, 11, 0.8);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+}
+
+
+.connect-card-wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.connect-icon-link {
+  display: inline-flex !important;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, color 0.3s ease !important;
+}
+
+.connect-icon-link:hover {
+  transform: translateY(-5px);
+}
+
+.connect-icon-link span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #94a3b8;
+  transition: color 0.3s ease;
+}
+
+.connect-icon-link:hover span {
+  color: #ffffff;
+}
+
+.icon-linkedin {
+  color: #94a3b8;
+}
+.connect-icon-link:hover .icon-linkedin {
+  color: #0077b5;
+  filter: drop-shadow(0 0 12px rgba(0, 119, 181, 0.6));
+}
+
+.icon-github {
+  color: #94a3b8;
+}
+.connect-icon-link:hover .icon-github {
+  color: #ffffff;
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.6));
+}
+
+.icon-resume {
+  color: #94a3b8;
+}
+.connect-icon-link:hover .icon-resume {
+  color: #f59e0b;
+  filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.6));
+}
+
+
+/* ==========================================================================
+   9. INTERACTIVE CONTACT FORM SYSTEM
+   ========================================================================== */
+.form-card-wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.portfolio-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input, 
+.form-group textarea {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(147, 51, 234, 0.4);
+  box-shadow: 0 0 15px rgba(147, 51, 234, 0.1);
+}
+
+.form-submit-btn {
+  border: none;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.success-banner {
+  color: #4ade80;
+  font-size: 0.9rem;
+  margin: 0;
+  text-align: center;
+}
+
+
+/* Project Card GitHub Link Styling */
+.project-github-link {
+  color: #94a3b8;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.project-github-link:hover {
+  color: #06b6d4; /* Cyan color matching your theme */
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.6));
+}
+
+/* Profile Picture Styling */
+.profile-pic-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem; /* Space between picture and your name */
+}
+
+.profile-pic {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%; /* Makes the image a perfect circle */
+  object-fit: cover;  /* Prevents your picture from stretching */
+  border: 2px solid rgba(74, 222, 128, 0.4); /* Subtle green border */
+  box-shadow: 0 0 20px rgba(74, 222, 128, 0.2); /* Soft green shadow glow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Fun interactive hover effect for the profile picture */
+.profile-pic:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  border-color: rgba(74, 222, 128, 0.8); /* Brighter green border */
+  box-shadow: 0 0 25px rgba(74, 222, 128, 0.5); /* Stronger neon green blast */
+}
